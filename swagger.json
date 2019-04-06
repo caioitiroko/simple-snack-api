@@ -7,10 +7,10 @@
       "email": "caioitiroko@ymail.com"
     }
   },
-  "host": "snackapi.herokuapp.com",
+  "host": "simple-snack-api.herokuapp.com/",
   "externalDocs": {
     "description": "Instruções",
-    "url": "https://github.com/caioitiroko/snackapi"
+    "url": "https://github.com/caioitiroko/simple-snack-api"
   },
   "schemes": [
     "https",
