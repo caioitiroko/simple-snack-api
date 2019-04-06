@@ -1,4 +1,5 @@
-const port = process.env.PORT || 3000;
+require('dotenv').config({ silent: process.env.NODE_ENV === 'production' });
+
 const apiDocs = require("./swagger.json");
 
 const http = require("http");
@@ -22,5 +23,7 @@ app.get("/snacks", (req, res) => res.json(snacks));
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(apiDocs));
 
 const server = http.createServer(app);
+
+const port = process.env.PORT || 3000;
 
 server.listen(port, () => console.log("App listening on port", port));
