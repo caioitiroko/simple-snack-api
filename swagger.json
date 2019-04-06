@@ -1,0 +1,121 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "Snack API",
+    "contact": {
+      "email": "caioitiroko@ymail.com"
+    }
+  },
+  "host": "snackapi.herokuapp.com",
+  "externalDocs": {
+    "description": "Instruções",
+    "url": "https://github.com/caioitiroko/snackapi"
+  },
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "tags": [
+    {
+      "name": "ingredient"
+    },
+    {
+      "name": "snack"
+    }
+  ],
+  "paths": {
+    "/ingredients": {
+      "get": {
+        "tags": [
+          "ingredient"
+        ],
+        "summary": "Retorna uma lista com todos os ingredientes",
+        "responses": {
+          "200": {
+            "description": "Operação bem sucedida",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Ingredient"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/snacks": {
+      "get": {
+        "tags": [
+          "snack"
+        ],
+        "summary": "Retorna uma lista com todos os lanches",
+        "responses": {
+          "200": {
+            "description": "Operação bem sucedida",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Snack"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Ingredient": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "float"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "price"
+      ],
+      "example": {
+        "id": "3371c576-586d-11e9-8647-d663bd873d93",
+        "name": "Alface",
+        "price": 0.4
+      }
+    },
+    "Snack": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ingredients": {
+          "type": "array",
+          "description": "Lista com os ids dos ingredientes"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "ingredients"
+      ],
+      "example": {
+        "id": "3371c846-586d-11e9-8647-d663bd873d93",
+        "name": "X-Burger",
+        "ingredients": [
+          "f4cd49de-89a7-44d3-8b38-d7052d770543",
+          "1944000d-4507-46d0-b350-8cc37a9b19d8"
+        ]
+      }
+    }
+  }
+}
