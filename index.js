@@ -16,9 +16,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan("combined"));
 
-app.get("/ingredients", (req, res) => res.json(ingredients));
+app.get("/v1/ingredients", (req, res) => res.json(ingredients));
 
-app.get("/snacks", (req, res) => res.json(snacks));
+app.get("/v1/snacks", (req, res) => res.json(snacks));
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(apiDocs));
 

@@ -25,7 +25,7 @@
     }
   ],
   "paths": {
-    "/ingredients": {
+    "/v1/ingredients": {
       "get": {
         "tags": [
           "ingredient"
@@ -44,7 +44,7 @@
         }
       }
     },
-    "/snacks": {
+    "/v1/snacks": {
       "get": {
         "tags": [
           "snack"
