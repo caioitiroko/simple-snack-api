@@ -17,5 +17,8 @@
     "ramda": "^0.26.1",
     "swagger-ui-express": "^4.0.2",
     "uuid": "^3.3.2"
+  },
+  "engines": {
+    "node": "~8"
   }
 }
