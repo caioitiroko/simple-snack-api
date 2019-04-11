@@ -1,7 +1,8 @@
 const uuid = require("uuid/v4");
-const { find, propEq } = require("ramda");
+const { assoc, find, propEq } = require("ramda");
 
-const getIngredient = name => find(propEq("name", name), ingredients);
+const getIngredient = (name, quantity = 1) =>
+  assoc('quantity', quantity, find(propEq("name", name), ingredients));
 
 const LETTUCE = "Alface";
 const BACON = "Bacon";
