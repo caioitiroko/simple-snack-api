@@ -76,6 +76,9 @@
         },
         "price": {
           "type": "float"
+        },
+        "commonIdentifier": {
+          "type": "string"
         }
       },
       "required": [
@@ -86,7 +89,8 @@
       "example": {
         "id": "3371c576-586d-11e9-8647-d663bd873d93",
         "name": "Alface",
-        "price": 0.4
+        "price": 0.4,
+        "commonIdentifier": "lettuce"
       }
     },
     "Snack": {
@@ -100,7 +104,26 @@
         },
         "ingredients": {
           "type": "array",
-          "description": "Lista com os ids dos ingredientes"
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "float"
+              },
+              "commonIdentifier": {
+                "type": "string"
+              },
+              "quantity": {
+                "type": "integer"
+              }
+            }
+          }
         }
       },
       "required": [
@@ -108,12 +131,24 @@
         "name",
         "ingredients"
       ],
-      "example": {
-        "id": "3371c846-586d-11e9-8647-d663bd873d93",
+      "example":   {
+        "id": "560b6a00-4eef-439f-80e2-5bf390a516f6",
         "name": "X-Burger",
         "ingredients": [
-          "f4cd49de-89a7-44d3-8b38-d7052d770543",
-          "1944000d-4507-46d0-b350-8cc37a9b19d8"
+          {
+            "id": "260b08a0-5f4a-420b-9767-c53dad1fa4be",
+            "name": "Hambúrguer de carne",
+            "price": 3,
+            "commonIdentifier": "meatBurger",
+            "quantity": 1
+          },
+          {
+            "id": "3e2d0356-27ed-49cc-b67f-de85ad3ec948",
+            "name": "Queijo",
+            "price": 1.5,
+            "commonIdentifier": "cheese",
+            "quantity": 1
+          }
         ]
       }
     }
