@@ -2,15 +2,15 @@
 
 Snack API is a simple snack api with static values.
 
+## Requirements
+- npm
+- NodeJS
+
 ## Installation
 
 ```bash
 git clone https://github.com/caioitiroko/snack-api
-```
-
-Run at the root of Snack API
-
-```bash
+cd snack-api
 npm install
 ```
 
